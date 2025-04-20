@@ -14,6 +14,7 @@ const initDB = async (pool) => {
         user_id VARCHAR(255) NOT NULL,
         token VARCHAR(255) NOT NULL,
         refresh_token VARCHAR(255) NOT NULL,
+        device_id VARCHAR(255) NOT NULL,
         is_active BOOLEAN DEFAULT TRUE,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE

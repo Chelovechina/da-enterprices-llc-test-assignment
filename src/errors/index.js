@@ -13,7 +13,14 @@ class BadRequestError extends AppError {
   }
 }
 
+class NotFoundError extends AppError {
+  constructor(message = 'Not found', details = []) {
+    super(message, 404, details);
+  }
+}
+
 module.exports = {
   AppError,
-  BadRequestError
+  BadRequestError,
+  NotFoundError
 };
