@@ -20,7 +20,7 @@ class TokenService {
       { expiresIn: this.jwtConfig.refreshTokenExpiration }
     )
 
-    await this.tokenRepository.save(token, refreshToken, userId, deviceId);
+    await this.tokenRepository.create(token, refreshToken, userId, deviceId);
 
     return { token, refreshToken };
   }

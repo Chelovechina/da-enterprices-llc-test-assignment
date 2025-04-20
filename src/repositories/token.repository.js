@@ -3,7 +3,7 @@ class TokenRepository {
     this.pool = pool
   }
 
-  async save(token, refreshToken, userId, deviceId) {
+  async create(token, refreshToken, userId, deviceId) {
     await this.pool.query(
       'INSERT INTO tokens (user_id, token, refresh_token, device_id) VALUES (?, ?, ?, ?)',
       [userId, token, refreshToken, deviceId]

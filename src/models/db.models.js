@@ -29,6 +29,7 @@ const initDB = async (pool) => {
         extension VARCHAR(10) NOT NULL,
         mime_type VARCHAR(100) NOT NULL,
         size INT NOT NULL,
+        path VARCHAR(255) NOT NULL,
         upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
       )

@@ -13,5 +13,11 @@ module.exports = {
     refresh: Joi.object({
       refreshToken: Joi.string().required()
     })
-  }
+  },
+  file: {
+    list: Joi.object({
+      page: Joi.number().integer().min(1).default(1),
+      list_size: Joi.number().integer().min(1).max(100).default(10)
+    }),
+  },
 }
