@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const container = require('./container/awilix.setup');
 const initDB = require('./models/db.models');
+const errorMiddleware = require('./middlewares/error.middleware');
 const authRoutes = require('./routes/auth.routes');
 const fileRoutes = require('./routes/file.routes');
 
@@ -11,6 +12,7 @@ initDB(container.resolve('pool'));
 
 app.use(cors());
 app.use(express.json());
+app.use(errorMiddleware);
 
 const authController = container.resolve('authController');
 const fileController = container.resolve('fileController');
